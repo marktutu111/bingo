@@ -16,7 +16,7 @@ class Bingo extends Component {
     
     rows:Array<number>=new Array(1,2,3,4,5);
     cols:number=this.rows.length-1;
-    _boxes:Array<number>=[]
+    _boxes:Array<number>=[];
 
     _pws:Array<Array<number>>=[
         [0,1,2,3,4],
@@ -130,7 +130,7 @@ class Bingo extends Component {
         this._cR=i;
         return (
             <tr className="th" key={i.toString()}>
-                {this._boxes.map((b,_i)=>{
+                {this._boxes.map((_i)=>{
                     if(this._cR===i && _i<=this.cols){
                         this._cB+=1;
                         let _k:string=(this._cB-1).toString();
@@ -151,7 +151,7 @@ class Bingo extends Component {
     
     _gnums=()=>{
         let x=0;
-        while (x<=24) {
+        while (x<=this.cols) {
             this._boxes.push(x);
             x+=1;
         }
